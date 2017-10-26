@@ -42,3 +42,28 @@ command+R, shift+R, select `dev`
 
 > [danger] Command click on link? Or just open a browser? Hmm...
 Open `http://localhost:3000`
+
+
+## Open Your `index.js` File
+
+You'll notice a few folders and files in your project. For now, let's focus on `index.js` and we'll come back to the rest later.
+
+
+
+
+
+
+
+
+> *[info] Explanation of Project Files*
+>
+> `.next`...
+> `components`
+> `node_modules`
+> `pages`
+> `static`
+> `.gitignore`
+> `next.config.js`
+> `package.json`
+> `README.md`
+> `yarn.lock`
