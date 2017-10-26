@@ -1,0 +1,18 @@
+{
+  "gitbook": "3.2.3",
+  "plugins": [
+    "github-embed",
+    "include-codeblock",
+    "alerts",
+    "advanced-emoji",
+    "prism",
+    "-highlight",
+    "copy-code-button",
+    "anchorjs",
+    "expandable-chapters",
+    "hints"
+  ],
+  "styles": {
+    "website": "styles/website.css"
+  }
+}
