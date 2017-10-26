@@ -1,15 +1,3 @@
-# Introduction
-
-> **[info] For info**
->
-> Use this for infomation messages.
-
-Not info
+# The JavaScript Book
 
 
-
-Not danger
-
-> **[success] For info**
->
-> Use this for success messages.
