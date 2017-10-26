@@ -27,7 +27,7 @@ The terminal should respond with
 
 > [success] Congratulations! You know JavaScript! :wink:
 
-## But This Isn't "Normal"
+## Write Code in Editors, Not REPLs
 
 You can spend all day writing things into the Node.js REPL:
 
@@ -47,7 +47,7 @@ or even
 ["I", "love", "cheese"].map(word => word.toUpperCase() + "!").join(" ")
 ```
 
-but _real_ development is done in a Code Editor like VS Code. It's important to understand that Node.js will be running behind the scenes in many of the tools that you'll be using everyday, but we're going to go through a few more setup steps to make our lives a billion times easier. Trust me, it's worth it.
+but _real_ development is done in a Code Editor like VS Code. None of this code is saved It's important to understand that Node.js will be running behind the scenes in many of the tools that you'll be using everyday, but we're going to go through a few more setup steps to make our lives a billion times easier. Trust me, it's worth it.
 
 
 

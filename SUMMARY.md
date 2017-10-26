@@ -7,32 +7,31 @@
 <!--
   Before we begin install required tools
 -->
-* [Before We Begin](./chapters/before.md)
-<!--
+* [Setup](./chapters/setup/README.md)
+  * [Before We Begin](./chapters/setup/before.md)
+  <!--
   Enter some basic JavaScript expression in the Terminal to get a feel for it
--->
-* [Run JavaScript in the Terminal](./chapters/node.md)
+  -->
+  * [Run JavaScript in the Terminal](./chapters/setup/node.md)
 
-<!--
+  <!--
   Install "create-next-app" so we can start cranking out webpages
--->
-* [Install Tools](./chapters/tools.md)
-<!--
+  -->
+  * [Install Tools](./chapters/setup/tools.md)
+  <!--
   Using const and let to define variables and do basic Math
--->
-* [Variables](./chapters/variables.md)
-<!--
-  Write a function to capture the logic
--->
-* [Functions](./chapters/functions.md)
-<!--
-  Using Arrays to work with many values
--->
-* [Arrays](./chapters/arrays.md)
-<!--
-  Objects at "data" and grouping values
--->
-* [Objects](./chapters/objects.md)
-
-
-
+  -->
+* [Fundamentals](./chapters/fundamentals/README.md)
+  * [Variables](./chapters/fundamentals/variables.md)
+  <!--
+    Write a function to capture the logic
+  -->
+  * [Functions](./chapters/fundamentals/functions.md)
+  <!--
+    Using Arrays to work with many values
+  -->
+  * [Arrays](./chapters/fundamentals/arrays.md)
+  <!--
+    Objects at "data" and grouping values
+  -->
+  * [Objects](./chapters/fundamentals/objects.md)

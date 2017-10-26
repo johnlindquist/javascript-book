@@ -35,3 +35,10 @@ In the Terminal, type the following commands:
 > [danger] Probably need screenshots to help build confidence
 
 
+## Start Your Project
+
+> [danger] Maybe a gif? 
+command+R, shift+R, select `dev`
+
+> [danger] Command click on link? Or just open a browser? Hmm...
+Open `http://localhost:3000`
