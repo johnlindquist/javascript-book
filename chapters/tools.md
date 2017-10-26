@@ -8,17 +8,30 @@
 
 ## Install a Server to Host Web Pages
 
-1. `npm install --global poi`
+Install `create-next-app` by running the following command in the Terminal:
 
+```bash
+npm i -g create-next-app
+```
+
+> [info] This is the "shorthad" for `npm install --global create-next-app`. It's much quicker to type `i -g` than `install --global`, so why not?
+
+"create-next-app" should now be installed.
 
 ## Setup a Project
 
 In the Terminal, type the following commands:
 
-`mkdir modern-javascript`
-> [success] Creates a directory called "modern-javascript"
+`create-next-app my-amazing-app`
+> [success] Creates a directory called "my-amazing-app" with projects files
 
-`code modern-javascript`
-> [success] Launches VS Code with "modern-javascript" as the working directory
+> [danger] We need to `Shell Command Install code in PATH` like you did earlier...
+
+`code my-amazing-app`
+> [success] Launches VS Code with "my-amazing-app" as the working directory
+
+## Browse Your Project Files
+
+> [danger] Probably need screenshots to help build confidence
 
 
