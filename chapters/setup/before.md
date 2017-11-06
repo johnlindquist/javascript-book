@@ -7,6 +7,13 @@
 
 VS Code should now be installed.
 
+### Print Off the Keyboard Shortcuts
+
+[VS Code Mac Shortcuts PDF](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf)
+
+[VS Code Windows Shortcuts PDF](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf)
+
+
 
 ### Install "Node.js" to Run JavaScript Tools
 1. Go to [https://nodejs.org/en/download/current/](https://nodejs.org/en/download/current/) 

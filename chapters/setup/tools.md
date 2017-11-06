@@ -35,7 +35,9 @@ In the Terminal, type the following commands:
 > [danger] Probably need screenshots to help build confidence
 
 
-## Start Your Project
+## Start Your Project with `npm run dev`
+
+> [danger] You can type the command `npm run dev` from the Terminal or run it from VS Code from the "Command Palette" (command+shift+P). I kinda like the idea of running it from VS Code.. 
 
 > [danger] Maybe a gif? 
 command+R, shift+R, select `dev`
@@ -47,6 +49,14 @@ Open `http://localhost:3000`
 ## Open Your `index.js` File
 
 You'll notice a few folders and files in your project. For now, let's focus on `index.js` and we'll come back to the rest later.
+
+Open the `pages/index.js` file.
+
+You will see a lot of JavaScript in this file. Go ahead and delete *everything*, then type and replace it with the following line:
+
+```js
+export default () => <div>Hello</div>
+```
 
 
 
