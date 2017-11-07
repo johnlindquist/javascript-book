@@ -12,30 +12,27 @@ const six = 2 + 4
 
 *After*
 ```js
-const add = (x, y)=> x + y
-const four = add(2, 2)
-const five = add(2, 3)
-const six = add(2, 4)
+const add2 = x => x + 2
+const four = add(2)
+const five = add(3)
+const six = add(4)
 ```
 
 #### Functions have input, logic, and output
 
-Look at the following arrow function
+Let's break down a function. First, we need input and logic.
 ```js
-()=>
+input => logic
 ```
 
-All by itself, it doesn't do anything. So let's add some input and logic.
-```js
-(input)=> logic
-```
+Think of this as your `input` being handed over to the `logic` to be
+evaluated. The `=>` shows your `input` where to go.
 
-So your input will be named inside the `()` (these are called `arguments` or 
-`args`) then the logic will happen on the right side of the `=>`. Now, let's 
-assign the function to a name:
+
+Now, assign the function to a name:
 
 ```js
-const myFunction = (input)=> logic
+const myFunction = input => logic
 ```
 
 Now we have a fully declared function we can use, so let's use it!
@@ -44,8 +41,30 @@ Now we have a fully declared function we can use, so let's use it!
 const output = myFunction(variables)
 ```
 
+The above `myFunction(variables)` takes the `variables` as `input`, applies the
+`logic`, then assigns the result to the `output`. This follows our programming
+cycle of "input", "logic", "output" which you'll see repeated over and over
+throughout your career. 
 
-#### A function makes logic reusable
+
+#### Two or More Arguments
+
+A function with one argument:
+```js
+const addOne = x => x + 1
+```
+
+A function with two arguments:
+```js
+const add = (x, y)=> x + y
+```
+
+Notice the `()` and the `,`. When you have more than one argument, you need
+to place them inside the `()` and separate them with commas. The `()` group
+the arguments together so that JavaScript knows they're part of the same
+function.
+
+#### Functions Make Logic Reusable
 
 Take a look at the following three functions
 ```js
@@ -83,6 +102,28 @@ const four = add(one, three)
 const five = add(two, three)
 ```
 
-After `add(two, three)` is evaluted, `two` is still `2` and `three` is 
+After `add(two, three)` is evaluated, `two` is still `2` and `three` is 
 still `3`. The function simply takes the variables as inputs and outputs a
 result.
+
+#### Comparing Variables in Functions
+Comparing things is the backbone of programming. Can this user access that information? Do we have pants in that color? Did you score enough to win the 
+game?
+
+```js
+const isEqualTo5 = x => x == 5
+const is4EqualTo5 = isEqualTo5(4)
+const is5EqualTo5 = isEqualTo5(5)
+```
+
+A double equals `==` represents equality when comparing two values. Remember a
+single `=` is an "assignment".
+
+```js
+
+const greaterThan5 = x => x > 5
+
+const is6GreaterThan5 = greaterThan5(6)
+const is4GreaterThan5 = greaterThan5(4)
+```
+
