@@ -1,38 +1,53 @@
+# Variables
+
 Programming is all about taking some input, doing something with it,
 then outputting it somehow. An online form would take your information,
 validate it, then submit it to create an account. A video game would
 take a button press, map it to a jump action, then trigger the character to jump
 on the screen.
 
-## Variables
-
 ```js
+const two = 2
 const four = 2 + 2
+const six = two + four
 ```
+
+What are these 3 lines? Why is the `=` to the left of the addition? And what's with those weird words at the start?
+
+### `const` is a _keyword_ that starts _statements_.
+You will always find `const` at the beginning of the line of code
+because `const` tells you that what is coming next is a name (like `four`), an assignment (`=`), then an expression (`2 + 2`).
+
+### The variable name
+You can name variables almost anything, but the most common is to use a
+camel-cased group of words to describe the expression: `order`, `carDestination`, `pizzasConsumed`, `removedPosts`, `likedVideos`. You'll find the full set of 
+variable naming rules in the appendix.
+
+### `=` represents an _assignment_.
+
+Each expression after the `=` is evaluated then _assigned_ to the name on the left.
+
+For example, `2` is evaluated then assigned the name `two`. So from now on, if
+you use `two` in your code base, it will represent the number `2`.
+
+In the second line, `2 + 2` is evaluated then assigned to the word `four`. So
+JavaScript will only have to evaluate `2 + 2` once and from then on out, you can
+just use `four` to represent the result of `2 + 2` (which is 4).
+
+On the third line, we're taking our `two` variable and `four` variable, adding 
+them together, then assigning them to the name `six`. 
+
+## The expression
+
+An expression can be as simple as the number `1`. JavaScript will evaluate `1`
+and give you the value of `1`. Simple, right? An expression can also evaluate
+math, dates, and all varieties of functions which we'll explore later.
+
+## Statements in a nutshell
 ```js
-let four = 2 + 2
+//start statement, name, assignment, expression
+const myVariable = 1 + 1
 ```
-```js
-var four = 2 + 2
-```
-
-#### What are these 3 lines?
-
-Each seem to accomplish the task of adding `2` and `2`, but 
-why is the `=` to the left of the addition? And what's with those weird words at the start.
-
-`=` represents an _assignment_.
-
-So each `2 + 2` evaluated then _assigned_ to the name on the left.
-
-`four` is a _variable_.
-
-Each `four` will now be a reference to the number "4" because `2 + 2` has been evaluated.
-
-`const`, `let`, and `var` are _keywords_ that start _statements_.
-You will always find them at the beginning of the line of code
-because they tell you that what is coming next is a name (like `four`), an assignment (`=`), then an expression (`2 + 2`).
-
 
 > ** [success] Good Examples **
 > ```
@@ -50,33 +65,52 @@ firstName = const "Kim"
 firstName = "Kim" const
 >```
 
-#### const, let, and var
 
-In short:
+## Strings
+```js
+const firstName = "Kim"
+const lastName = "Wilkes"
+const planet = "Earth"
+```
 
-* Use `const` almost always
-* Use `let` when needed
-* Avoid `var`, but you'll see it _everywhere_
+Unlike numbers, letters and words need quotation marks `""` around them. The 
+`""`'s let JavaScript know that you want them to be a "string of characters".
 
-`const` prevents you from "re-assigning" the variable to something else. 
-Re-assigning can cause unexpected bugs in your code.
-
-> ** [danger] `const` prevents the following **
-> ```
-const name = "John"
-name = "Kim"
-//Uncaught TypeError: Assignment to constant variable.
+> ** [danger] What if I forget `""`'s? **
+>```js
+const firstName = Kim
+/*
+  JavaScript will look for a variable named Kim,
+  when it can't find Kim, you'll get this error:
+  Uncaught ReferenceError: Kim is not defined
+*/
 >```
 
-`let` allows you to "re-assign". We'll talk more about why you might want to
-later in the book.
 
-`var` has been around since JavaScript was first released as a language while
-`const` and `let` are relatively new. When you Google for an answer to your
-JavaScript questions, odds are the answer will include a `var`. This doesn't
-mean the answer is wrong, simply that the answer is older than `const` and `let`
-. `var` is a lot like `let` in that it allows you to re-assign, but also has
-looser scoping. We'll discuss more about _scope_ later.
+## Combining Strings and Multi-line Strings
+```js
+const sentence = `${firstName} ${lastName} lives on planet ${location}`
+const haiku = `
+From time to time
+The clouds give rest
+To the moon-beholders.
+`
+```
+
+The backtick `` ` `` starts and ends long strings. It even gives you the extra
+feature of evaluating variables inside of your strings. Look at the sentence
+above and you'll see `${}` surround names of variables. Those names will be
+evaluated and placed into the string.
+
+
+## True and False
+```js
+const isKimCool = true
+```
+
+`true` and `false` are called "booleans" in programming. They're most often
+used as the result of a comparison which we'll talk more about in our
+chapter on functions.
 
 
 

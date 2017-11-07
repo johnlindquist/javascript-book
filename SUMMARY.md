@@ -22,6 +22,7 @@
   Using const and let to define variables and do basic Math
   -->
 * [Fundamentals](./chapters/fundamentals/README.md)
+  * [Comments](./chapters/fundamentals/comments.md)
   * [Variables](./chapters/fundamentals/variables.md)
   <!--
     Write a function to capture the logic
