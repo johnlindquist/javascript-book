@@ -36,3 +36,6 @@
     Objects at "data" and grouping values
   -->
   * [Objects](./chapters/fundamentals/objects.md)
+  * [Classes](./chapters/fundamentals/classes.md)
+* [Legacy](./chapters/legacy/README.md)
+  * [Functions and Scope](./chapters/legacy/comments.md)

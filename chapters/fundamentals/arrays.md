@@ -67,30 +67,30 @@ const wilkes = people.filter(isWilkes)
 //wilkes is a new Array with one string: ["Kim Wilkes"]
 ```
 
-## Customizing a Function
+> ** [info] Looking Ahead: Functions Can Make Functions **
+>
 `isLindquist` and `isWilkes` are very specific functions, we'd rather be able
 to create functions to support any last name. So let's make a function that
 makes functions 😉
 
-```js
+>```js
 const people = ["Kim Wilkes", "John Lindquist", "Mindy Lindquist"]
-//See the two =>'s? This function outputs a function!
+//See the two =>'s? The function with the lastName input outputs a function
+with a name input!
 const isLastName = lastName => name => name.includes(lastName)
-
 /*
   isLindquist is now the same function as before:
   const isLindquist = name => name.includes("Lindquist")
   only this time, we create it from the isLastName function.
 */
 const isLindquist = isLastName("Lindquist")
-
 const isWilkes = isLastName("Wilkes")
-
 const lindquists = people.filter(isLindquist)
 //lindquists is new Array with two strings: ["John Lindquist", "Mindy Lindquist"]
 const wilkes = people.filter(isWilkes)
 //wilkes is a new Array with one string: ["Kim Wilkes"]
-```
+>```
+> We'll explore useful utilities that help with this style later
 
 ## Change Arrays of Strings with `.map`
 
@@ -126,7 +126,8 @@ think of `0` as a marker to the left of the first letter and `1` as a marker
 to the right so that if you want the first letter, you're asking for the letter
 between `0` and `1`.
 
-We can further demonstrate this with `.slice`:
+We can further demonstrate this with `.slice`. `.slice` takes a start index
+and and end index and gives you every character in-between:
 ```js
 //The letter between 0 and 1 is the first letter
 const getFirstLetter = word => word.slice(0, 1)
@@ -172,3 +173,62 @@ const goodGetLastLetter = word => word.charAt(word.length - 1)
 const goodExample = goodGetLastLetter("Kim") //"m"
 //Move the index one to the left with `-1`, then we're looking in the right spot
 >```
+
+Using `.slice`, we can easily grab the final letters off of a String. `-1` is a
+valid index to slice (meaning the index before `.length`), so we could simply
+start at -1. The second argument of `.slice` defaults to the `.length` of the
+String, so we can actually leave it out:
+```js
+"Kim".slice(-1, "Kim".length) //"m"
+//is the same as
+"Kim".slice(-1) //"m"
+```
+
+So our functions would look like this:
+```js
+const getLastLetter = word => word.slice(-1)
+const getLastTwoLetters = word => word.slice(-2)
+const getLastThreeLetters = word => word.slice(-3)
+
+const y = getLastLetter("Mindy") //"y"
+const dy = getLastTwoLetters("Mindy") //"dy"
+const ndy = getLastThreeLetters("Mindy") //"ndy"
+``` 
+
+## `.slice` works on Arrays too!
+You can use what you learned with `.slice` and apply that exact same thinking
+to Arrays:
+```js
+const people = ["Kim", "John", "Mindy", "Ben", "Lisa"]
+
+const getFirst = array => array.slice(0, 1)
+const getLast = array => array.slice(-1)
+//You can also use -1 as an end index to slice to before the last item
+const getMiddle = array => array.slice(1, -1)
+
+const first = getFirst(people) //["Kim"]
+const last = getLast(people) //["Lisa"]
+const middle = getMiddle(people) //["John", "Mindy", "Ben"]
+```
+
+> ** [info] Looking Ahead: Function Composition **
+> Functions that have Arrays as input and output can work together:
+>```js
+//getMiddle is called with people, then getFirst is called with that result
+const getFirstOfMiddle = array => getFirst(getMiddle(array))
+const firstOfMiddle = getFirstOfMiddle(people) // ["John"]
+>```
+> There are useful utilities to help compose functions that we'll explore later
+
+
+## Put Arrays Back Together with `...`
+`...` refers to "spreading", so you can take all the items in an Array
+and spread them into another Array:
+```js
+const first = ["Kim"]
+const middle = ["John", "Mindy", "Ben"]
+const last = ["Lisa"]
+
+const all = [...first, ...middle, ...last] 
+//all is now ["Kim", "John", "Mindy", "Ben", "Lisa"]
+```
