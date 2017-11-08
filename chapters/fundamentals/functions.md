@@ -13,9 +13,9 @@ const six = 2 + 4
 *After*
 ```js
 const add2 = x => x + 2
-const four = add(2)
-const five = add(3)
-const six = add(4)
+const four = add2(2)
+const five = add2(3)
+const six = add2(4)
 ```
 
 #### Functions have input, logic, and output
@@ -126,4 +126,5 @@ const greaterThan5 = x => x > 5
 const is6GreaterThan5 = greaterThan5(6)
 const is4GreaterThan5 = greaterThan5(4)
 ```
+
 

@@ -91,3 +91,84 @@ const lindquists = people.filter(isLindquist)
 const wilkes = people.filter(isWilkes)
 //wilkes is a new Array with one string: ["Kim Wilkes"]
 ```
+
+## Change Arrays of Strings with `.map`
+
+First, let's create a function that can say "Hi" to anyone:
+
+```js
+const sayHi = name => `Hi, ${name}`
+const hiKim = sayHi("Kim")// "Hi, Kim"
+const hiJohn = sayHi("John") // "Hi, John"
+const hiMindy = sayHi("Mindy")// "Hi, Mindy"
+```
+
+Now we can use our `sayHi` function on our Array of people with `.map`:
+
+```js
+const people = ["Kim", "John", "Mindy"]
+const hiPeople = people.map(sayHi)
+//hiPeople is now ["Hi, Kim", "Hi, John", "Hi, Mindy"]
+```
+
+## Get a Part of a String with `charAt` or `slice`
+We can pull out individual letters from a String with `charAt`:
+```js
+const getFirstLetter = word => word.charAt(0)
+const j = getFirstLetter("joy") //"j"
+const K = getFirstLetter("Kim") //"K"
+const M = getFirstLetter("Mindy") //"M"
+```
+
+`0` is the beginning of the String, `1` is the second, `2` is third, and so on.
+We call this, "zero-based index", where you begin counting at `0`. If it helps,
+think of `0` as a marker to the left of the first letter and `1` as a marker
+to the right so that if you want the first letter, you're asking for the letter
+between `0` and `1`.
+
+We can further demonstrate this with `.slice`:
+```js
+//The letter between 0 and 1 is the first letter
+const getFirstLetter = word => word.slice(0, 1)
+
+//The letters between 0 and 2 are the first and second letter
+const getFirstAndSecondLetter = word => word.slice(0, 2)
+
+//The letters between 1 and 3 are the second and third letters
+const getSecondAndThirdLetter = word => word.slice(1, 3)
+
+const K = getFirstLetter("Kim") //"K"
+const Ki = getFirstAndSecondLetter("Kim") //"Ki"
+const im = getSecondAndThirdLetter("Kim") //"im"
+```
+
+We can use our new functions with Array and `.map` just like before:
+```js
+const people = ["Kim", "John", "Mindy"]
+const secondAndThirdLetters = people.map(getSecondAndThirdLetter)
+//secondAndThirdLetters is ["im", "oh", "in"]
+```
+
+## Get the End of a String with `.length`
+`.length` is a property on a String that tells you the index to the right
+of the last character:
+```js
+"Kim".length //3
+"John".length //4
+"Mindy".length //5
+```
+
+<br>
+So getting an entire String would start at `0` (to the left of the first character) and end at `.length` (to the right of the last character).
+
+> ** [danger] Remember, `.length` is _after_ the last character **
+>```js
+//Bad Example
+const badGetLastLetter = word => word.charAt(word.length)
+const badExample = badGetLastLetter("Kim") //""
+//The index of .length comes after the word, so it can't find a letter
+//Good Example. Notice the -1
+const goodGetLastLetter = word => word.charAt(word.length - 1)
+const goodExample = goodGetLastLetter("Kim") //"m"
+//Move the index one to the left with `-1`, then we're looking in the right spot
+>```
