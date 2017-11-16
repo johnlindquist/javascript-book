@@ -36,3 +36,4 @@ const inStock = item => kitchen.includes(item)
 
 const canMakeCookies = inStock("sugar") && inStock("flour")
 ```
+// What do the ? and : signify?
