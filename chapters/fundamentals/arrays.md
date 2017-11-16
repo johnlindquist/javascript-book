@@ -236,3 +236,80 @@ const last = ["Lisa"]
 const all = [...first, ...middle, ...last] 
 //all is now ["Kim", "John", "Mindy", "Ben", "Lisa"]
 ```
+
+## Get an Item from an Array by Index
+Often, instead of an Array, you just want a single Item from the Array:
+
+```js
+const array = ["a", "b", "c", "d", "e", "f"]
+
+//Notice the index surrounded by [], a colon :, then the name
+const {[0]:first} = array // first is now "a"
+const {[2]:third} = array // third is now "c"
+const {[array.length - 1]:last} = array // last is now "f"
+```
+
+You can even combine these into a single statement:
+```js
+const array = ["a", "b", "c", "d", "e", "f"]
+
+const {[0]:first, [2]:third, [array.length - 1]:last} = array
+//Again, first is "a", third is "c", and last is "f"
+```
+
+You will often see a statement like the one above spread across multiple
+lines for readability:
+
+```js
+//The EXACT SAME as above
+const array = ["a", "b", "c", "d", "e", "f"]
+
+const {
+  [0]:first, 
+  [2]:third, 
+  [array.length - 1]:last
+} = array
+
+```
+
+## Get a Random Item from an Array
+For many games and apps, you'll want to select something from an
+Array at random. A typical `getRandomIndex` leverages the functions
+built on `Math`:
+
+```js
+const getRandomIndex = array => Math.floor(Math.random() * array.length)
+```
+
+Let's break this down piece by piece:
+```js
+Math.random() //Generates a random number between 0 - 1 e.g. 
+/*
+Examples:
+0.2195010408727054
+0.6597169504828302
+0.34967492089264995
+*/
+Math.random() * array.length
+/*
+  Generates a random number between 0 and the length of the Array
+*/
+Math.floor(0.4) //rounds down to 0
+Math.floor(8.9) //rounds down to 8
+Math.floor(100.987523) //rounds down to 100
+
+Math.floor(Math.random() * array.length)
+/*
+  Rounds the random number down to a proper index
+*/
+```
+
+Putting it all together:
+```js
+const array = ["a", "b", "c", "d", "e", "f"]
+const getRandomIndex = array => Math.floor(Math.random() * array.length)
+
+const randomIndex = getRandomIndex(array)
+
+const {[randomIndex]:randomItem} = array
+```
