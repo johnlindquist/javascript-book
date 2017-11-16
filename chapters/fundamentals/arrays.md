@@ -210,6 +210,10 @@ const first = getFirst(people) //["Kim"]
 const last = getLast(people) //["Lisa"]
 const middle = getMiddle(people) //["John", "Mindy", "Ben"]
 ```
+//Ok, the more examples I see of functions, the more they make sense.
+/*
+Sometimes I think it would be simpler to slice or do another command to each part individually, rather than creating more variables and whatnot, but I guess if there were a large amount of data, the function would be a more effecient route to go.
+*/
 
 > ** [info] Looking Ahead: Function Composition **
 > Functions that have Arrays as input and output can work together:
