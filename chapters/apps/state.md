@@ -15,6 +15,7 @@ Below is a simplified version of "Hangman".
 Notice how the `game` Object has a `state` and a way to `save` the state, so
 the cycle becomes:
 1. Call `addGuess` with the guess and the old state
+//Need to explain what call means at some point
 2. `addGuess` gives us back a new state
 3. We save the new state with `game.save`
 
@@ -71,3 +72,4 @@ const current = compare(
 
 //C?a?c? Favo?s ??? P??pa??? M???
 ```
+//Reading the code, I kind of get it, but I could use comments explaining what each part is doing
